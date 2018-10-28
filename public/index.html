@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>vuerhino3dm</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
   </head>
   <body>
     <noscript>
@@ -13,5 +16,21 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    
+    <script type="text/javascript" src="https://files.mcneel.com/rhino3dm/js/latest/compute.rhino3d.js"></script>
+    <script src="https://threejs.org/build/three.js"></script>
+    <script type="text/javascript" src="./lib/util.js"></script>
+    <script type="text/javascript" src="./lib/OrbitControls.js"></script>
+    <script type="text/javascript">
+    window.loaded = false;
+      var Module = {
+        onRuntimeInitialized: function() { 
+          console.log('rhino3dm loaded');
+          window.loaded = true;
+          init();
+        } 
+      };
+    </script>
+    <script async type="text/javascript" src="https://files.mcneel.com/rhino3dm/js/latest/rhino3dm.js"></script>
   </body>
 </html>
